@@ -17,3 +17,7 @@ echo "source /usr/bin/daily.sh">>~/.zshrc
 重新打开终端
 - 执行`vim_daily` 使用vim打开当日工作note.md
 - 执行`open_daily` 打开当日工作文件夹,存放需要储存的文件
+
+## ros.sh
+
+同上，替换daily.sh为ros.sh
