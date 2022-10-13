@@ -3,11 +3,13 @@
 alias srb="source /opt/ros/rolling/setup.bash"
 alias srz="source /opt/ros/rolling/setup.zsh"
 alias cbpu="colcon build --packages-up-to "
+alias cbvtd="colcon build --packages-up-to all_msgs vtd_pkg rviz_proxy_node parking_rviz_node function_management_rviz_plugin"
 alias rr="ros2 run "
 # alias plotjuggler="rr plot
 
 alias rbp="ros2 bag play "
 alias rbpl="ros2 bag play -l "
+alias rlvtd="ros2 launch asf_nodes/simulation/vtd_pkg/launch/vtd_test.py"
 
 alias sib="source install/setup.bash"
 alias siz="source install/setup.zsh"

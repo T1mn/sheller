@@ -9,9 +9,9 @@
 - 配置
 ```
 cd ${shell_tools_path}
-sudo cp ./daily.sh /usr/bin/
-echo "source /usr/bin/daily.sh">>~/.bashrc
-echo "source /usr/bin/daily.sh">>~/.zshrc
+sudo cp ./daily.sh ~/
+echo "source ~/daily.sh">>~/.bashrc
+echo "source ~/daily.sh">>~/.zshrc
 ```
 - 使用
 重新打开终端
