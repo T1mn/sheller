@@ -3,6 +3,7 @@
 date_time=$(date "+%Y_%m_%d")
 daily_path=/home/"${USER}"/workspace/daily/"${date_time}"
 daily_code_path=/home/"${USER}"/workspace/daily/"${date_time}"/code
+echo "today is ${date_time}"
 
 if [ ! -d "${daily_path}" ]; then
 	{
