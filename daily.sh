@@ -7,7 +7,7 @@ echo "today is ${date_time}"
 
 if [ ! -d "${daily_path}" ]; then
 	{
-		mkdir "${daily_path}"
+		mkdir -p "${daily_path}"
 	}
 fi
 
