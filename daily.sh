@@ -1,26 +1,43 @@
 #!/bin/bash
 
+code_path="/usr/bin/code"
 date_time=$(date "+%Y_%m_%d")
 daily_path=/home/"${USER}"/workspace/daily/"${date_time}"
-daily_code_path=/home/"${USER}"/workspace/daily/"${date_time}"/code
-echo "today is ${date_time}"
 
-if [ ! -d "${daily_path}" ]; then
-	{
-		mkdir -p "${daily_path}"
+daily_paths=( "${daily_path}/code" "${daily_path}/doc" "${daily_path}/pic" )
+
+function mk_daily () {
+	if [ ! -d "$1" ]; then
+	{		
+		echo "update files of $1"
+		mkdir -p "$1"
 	}
-fi
+	fi
+}
 
-if [ ! -d "${daily_code_path}" ]; then
-	{
-		mkdir "${daily_code_path}"
-	}
-fi
+function init_daily () {
+    echo "today is ${date_time}"
+	for daily_path in "${daily_paths[@]}";
+	do
+		# echo "$daily_path"
+		mk_daily "${daily_path}"
+	done
+}
 
-fuction vim_daily(){
+function vim_daily () {
 	vim "${daily_path}"/notes.md
 }
 
-fuction open_daily(){
+function open_daily () {
 	nautilus "${daily_path}"
 }
+
+function code_daily () {
+	if [ ! -x ${code_path} ];then
+	    echo "can not find code, please download it!"
+	    return;
+	fi
+		code "${daily_path}"
+}
+
+init_daily
