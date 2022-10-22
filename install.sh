@@ -14,6 +14,16 @@ function init () {
         echo "create directory \"/home/${USER}/.shell_tools\""
         $(mkdir -p /home/${USER}/.shell_tools)
     fi
+    if [ ! -d "/home/${USER}/.config/Code/" ]; then
+        echo "vs code not be installed!"
+    elif [ ! -d "/home/${USER}/.config/Code/User/snippets" ]; then
+        echo "create direcotory \"/home/${USER}/.config/Code/User/snippets\""
+        mkdir -p /home/${USER}/.config/Code/User/snippets
+    fi
+    if [ -f "/home/${USER}/.config/Code/User/snippets/cpp.json" ]; then
+        $(mv /home/${USER}/.config/Code/User/snippets/cpp.json /home/${USER}/.config/Code/User/snippets/cpp.json.bak)
+        echo "make a cpp.json backup"
+    fi
 }
 
 # find configs(shrc)
@@ -43,7 +53,7 @@ function update_shell_config () {
 function install_shell_tools () {
     init
     get_base_shell_config
-    echo 'start installing...'
+    echo 'shell installing...'
     update_shell_config "export SHELL_PATH=${path}" "${path}" # update env
     files=$(ls $path | grep ".sh$" | grep -v "install")
     for filename in $files
@@ -54,8 +64,17 @@ function install_shell_tools () {
         $(sudo ln -s "${source_file}" "${target_file}")
         update_shell_config "source ${target_file}" "$filename"
     done
-    echo 'install complete'
+    echo 'shell install complete'
 }
+
+# install vscode snippet
+function install_vscode_snippet () {
+    echo "vscode snippet installing"
+    $(ln -s "${path}"/cpp.json /home/${USER}/.config/Code/User/snippets/cpp.json)
+    echo "vscode snippet complete"
+}
+
 
 # start
 install_shell_tools
+install_vscode_snippet

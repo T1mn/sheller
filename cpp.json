@@ -1,0 +1,45 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"make a shared pointer": {
+		"prefix": "mksp",
+		"body": [
+			"std::shared_ptr<$1> $2 = std::make_shared<$1>();",
+		],
+		"description": "make a shared_ptr"
+	},
+	"make module base class":{		
+		"prefix": "moduleclass",
+		"body":[
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/i}} : public ${2:Module_base} {"
+			"public:"
+			"\t$1} ();"
+			"\t~$1();"
+			"\t$1 (const $1 &)				= delete;"
+			"\t$1& operator=(const $1 &)	= delete;"
+			""
+			"public:"
+			"\tint32_t init()			override;"
+			"\tint32_t pre_process()	override;"
+			"\tint32_t process()		override;"
+			"\tint32_t post_process()	override;"
+			""
+			"private:"
+			"\t"
+			"\t"
+			"\t"
+			"\t"
+			"\t"
+			"\t"
+			"};"
+		],
+		"description": "make module base class"
+	},
+	"cpp guard":{
+		"prefix": "cppguard",
+		"body": "#ifndef __H_${1:${TM_FILENAME_BASE/(.*)/${1:/upcase}/i}}_H__ \n#define __H_$1_H__ \n\n#endif\t// __H_$1_H__"
+	}
+}
