@@ -16,7 +16,7 @@
 		"body":[
 			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/i}} : public ${2:Module_base} {"
 			"public:"
-			"\t$1} ();"
+			"\t$1 ();"
 			"\t~$1();"
 			"\t$1 (const $1 &)				= delete;"
 			"\t$1& operator=(const $1 &)	= delete;"
