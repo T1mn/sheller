@@ -3,8 +3,13 @@
 # source_ros
 alias srb="source /opt/ros/rolling/setup.bash"
 alias srz="source /opt/ros/rolling/setup.zsh"
-alias sib="source install/setup.bash"
-alias siz="source install/setup.zsh"
+alias sib="source /home/${USER}/repo/orin/packages/install/setup.bash"
+alias siz="source /home/${USER}/repo/orin/packages/install/setup.zsh"
+
+# cd repo orin
+alias cro="cd /home/${USER}/repo/orin"
+# rolling_docker
+alias roll_dock="/home/${USER}/packages/asf_nodes/script/docker_rolling.sh"
 
 # colcon_build
 alias cbpu="colcon build --packages-up-to "
