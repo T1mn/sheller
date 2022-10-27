@@ -1,31 +1,44 @@
 #!/bin/bash
 
 # source_ros
-alias srb="source /opt/ros/rolling/setup.bash"
-alias srz="source /opt/ros/rolling/setup.zsh"
+alias seb="source /opt/ros/rolling/setup.bash"
+alias sez="source /opt/ros/rolling/setup.zsh"
 alias sib="source /home/${USER}/repo/orin/packages/install/setup.bash"
 alias siz="source /home/${USER}/repo/orin/packages/install/setup.zsh"
+alias rosenv_b="seb && sib"
+alias rosenv_z="sez && sib"
 
 # cd repo orin
 alias cro="cd /home/${USER}/repo/orin"
+alias crop="cd /home/${USER}/repo/orin/packages"
 # rolling_docker
-alias roll_dock="/home/${USER}/packages/asf_nodes/script/docker_rolling.sh"
+alias rolling="/home/${USER}/repo/orin/packages/asf_nodes/script/docker_rolling.sh"
+# record parking
+alias rrcp="/home/${USER}/repo/orin/packages/asf_nodes/script/record_parking.sh"
+alias rrcd="/home/${USER}/repo/orin/packages/asf_nodes/script/record_driving.sh"
+
 
 # colcon_build
 alias cbpu="colcon build --packages-up-to "
 alias cbvtd="cbpu all_msgs vtd_pkg pecpt_park_rviz_node function_management_rviz_plugin"
-alias cbrpk="cbpu pecpt_park_rviz_node"
-alias cbrpi="cbpu pecpt_pilot_rviz_node"
+alias cbrp="cbpu pecpt_park_rviz_node"
+alias cbrd="cbpu pecpt_pilot_rviz_node"
 
 # ros run
 alias rr="ros2 run "
 alias rrpj="rr plotjuggler plotjuggler"
-alias rrparkr="rr pecpt_park_rviz_node pecpt_park_rviz_node"
-alias rrpilor="rr pecpt_pilot_rviz_node pecpt_pilot_rviz_node"
+alias rrpr="rr pecpt_park_rviz_node pecpt_park_rviz_node"
+alias rrdr="rr pecpt_pilot_rviz_node pecpt_pilot_rviz_node"
+# ros run topic hz
+alias rrth="rr topichz topichz "
+
+# ros topic hz per
+alias rtlPK_PER="ros2 topic list | grep PK/PER"
+alias rtlPK="ros2 topic list | grep PK"
 
 # rviz
 alias rv2="rviz2 "
-alias rvizpk="rv2 -d asf_nodes/simulation/pecpt/pecpt_park_rviz/pecpt_park.rviz"
+alias rv2p="rv2 -d asf_nodes/simulation/pecpt/pecpt_park_rviz/pecpt_park.rviz"
 
 # ros bag play
 alias rbp="ros2 bag play "
