@@ -3,8 +3,8 @@
 # source_ros
 alias seb="source /opt/ros/rolling/setup.bash"
 alias sez="source /opt/ros/rolling/setup.zsh"
-alias sib="source /home/${USER}/repo/orin/packages/install/setup.bash"
-alias siz="source /home/${USER}/repo/orin/packages/install/setup.zsh"
+alias sib="source /home/${USER}/ros2_msg/install/setup.bash"
+alias siz="source /home/${USER}/ros2_msg/install/setup.zsh"
 alias rosenv_b="seb && sib"
 alias rosenv_z="sez && sib"
 

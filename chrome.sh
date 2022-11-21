@@ -15,6 +15,7 @@ url_lists=(
   "gerrit" 
   "confluence" 
   "jira" 
+  "JFrog"
   "outlook"
   "nothing"
 )
@@ -38,6 +39,10 @@ do
             /usr/bin/google-chrome --new-window http://10.133.144.14:8080/browse/HPC2AD-6082?filter=-1 >/dev/null 2>&1 &
             break
             ;;
+	"JFrog")
+	    /usr/bin/google-chrome --new-window http://10.133.122.84:80/ >/dev/null 2>&1 &
+	    break
+	    ;;
         "nothing")
             break
             ;;
