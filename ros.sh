@@ -13,6 +13,7 @@ alias cro="cd /home/${USER}/repo/orin"
 alias crop="cd /home/${USER}/repo/orin/packages"
 # rolling_docker
 alias rolling="/home/${USER}/repo/orin/packages/asf_nodes/script/docker_rolling.sh"
+alias ros2_docker="/home/${USER}/repo/orin/packages/asf_nodes/script/docker.sh"
 # record parking
 alias rrcp="/home/${USER}/repo/orin/packages/asf_nodes/script/record_parking.sh"
 alias rrcd="/home/${USER}/repo/orin/packages/asf_nodes/script/record_driving.sh"
