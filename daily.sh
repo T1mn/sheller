@@ -9,7 +9,7 @@ daily_paths=( "${daily_path}/code" "${daily_path}/doc" "${daily_path}/pic" )
 
 function mk_daily () {
 	if [ ! -d "$1" ]; then
-	{		
+	{
 		echo "update files of $1"
 		mkdir -p "$1"
 	}
