@@ -62,7 +62,11 @@ function install_shell_tools () {
         target_file="$target_path"/"$filename"
         $(sudo rm -rf "${target_file}")
         $(sudo ln -s "${source_file}" "${target_file}")
+    #   if [[ "${filename}" == *"record"* ]]; then
+    #     echo "${filename} contains: record"
+    #     else
         update_shell_config "source ${target_file}" "$filename"
+    #   fi
     done
     echo 'shell install complete'
 }

@@ -4,7 +4,7 @@ code_path="/usr/bin/code"
 date_time=$(date "+%Y_%m_%d")
 daily_path=/home/"${USER}"/workspace/daily/"${date_time}"
 rosbag_path=/home/"${USER}"/rosbag/"${date_time}"
-rosbag_paths=( "${rosbag_path}/driving" "${rosbag_path}/parking" )
+rosbag_paths=( "${rosbag_path}/driving" "${rosbag_path}/parking/hpp" "${rosbag_path}/parking/apa" )
 daily_paths=( "${daily_path}/code" "${daily_path}/doc" "${daily_path}/pic" )
 
 function mk_daily () {
